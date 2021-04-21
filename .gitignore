@@ -10,3 +10,9 @@ dist/**
 # logs
 */npm-debug.log
 */yarn-error.log
+
+# Env
+*.env
+
+# Test Output
+**/test/**

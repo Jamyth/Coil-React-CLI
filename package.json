@@ -1,26 +1,37 @@
 {
     "name": "coil-react-cli",
     "version": "1.0.0",
+    "description": "A Command Line Interface for code generation of package -- coil-react",
     "main": "dist/index.js",
     "license": "MIT",
+    "bin": {
+        "coil-react": "dist/bin/index.js"
+    },
     "scripts": {
         "run-script": "ts-node --project config/tsconfig.script.json",
         "format": "yarn run-script script/format.ts",
         "lint": "yarn run-script script/lint.ts",
-        "build": "yarn run-script script/build.ts",
-        "test": "mocha --require ts-node/register ./test/**/*.test.ts"
+        "build": "rm -rf dist && yarn run-script script/build.ts",
+        "test:src": "NODE_ENV=COIL_REACT_TEST ts-node --project config/tsconfig.src.json ./src/bin/index.ts",
+        "test:prod": "NODE_ENV=COIL_REACT_TEST node dist/bin/index.js"
     },
     "files": [
         "dist/**"
     ],
     "devDependencies": {
-        "@iamyth/logger": "1.0.4",
         "@iamyth/prettier-config": "0.0.1",
+        "@types/fs-extra": "9.0.11",
         "@types/node": "14.14.41",
+        "@types/yargs": "16.0.1",
         "eslint-config-iamyth": "0.0.5",
         "mocha": "8.3.2",
         "prettier": "2.2.1",
         "ts-node": "9.1.1",
         "typescript": "4.2.4"
+    },
+    "dependencies": {
+        "@iamyth/logger": "1.0.4",
+        "fs-extra": "9.1.0",
+        "yargs": "16.2.0"
     }
 }

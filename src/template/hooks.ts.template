@@ -1,0 +1,8 @@
+import Recoil from 'recoil'
+import { /// {1} ///State } from 'module//// {2} ///'
+import type { State } from './type'
+
+export const use/// {1} ///State = <T>(fn: (state: State) => T): T => {
+    const state = Recoil.useRecoilValue(/// {1} ///State);
+    return fn(state);
+}
