@@ -1,6 +1,6 @@
 {
     "name": "coil-react-cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Command Line Interface for code generation of package -- coil-react",
     "main": "dist/index.js",
     "license": "MIT",
