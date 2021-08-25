@@ -19,7 +19,7 @@ export class CoilReactCLI {
     private readonly logger = createConsoleLogger('Coil React CLI');
 
     constructor() {
-        this.name = String(yargs.argv._[0]);
+        this.name = String((yargs.argv as any)._[0]);
         this.rootPath = path.join();
         this.moduleDirectory = this.getModuleDirectory();
         this.templatePath = path.join(__dirname, './template');
